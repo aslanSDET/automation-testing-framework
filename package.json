@@ -1,0 +1,25 @@
+{
+  "name": "automation-testing-framework",
+  "version": "1.0.0",
+  "description": "Comprehensive test automation framework covering API and UI testing for simple REST endpoints and demo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslanSDET/automation-testing-framework.git"
+  },
+  "keywords": [
+    "playwright",
+    "api",
+    "jest",
+    "automation"
+  ],
+  "author": "aslanSDET",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aslanSDET/automation-testing-framework/issues"
+  },
+  "homepage": "https://github.com/aslanSDET/automation-testing-framework#readme"
+}
