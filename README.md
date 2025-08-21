@@ -45,21 +45,6 @@ npm run test:headed
 --grep @flaky
 ```
 
-### **Project Structure**
-tests/
-├── ui/                     # UI test files
-│   ├── pages/             # Page Object Model classes
-│   │   └── todo.page.js   # Main TodoMVC page object
-│   ├── components/        # Reusable component objects
-│   │   └── ToDoItem.js    # Individual todo item component
-│   └── todo.test.js       # Main test scenarios
-├── data/                  # Test data and constants
-│   ├── test-data.js       # Test data sets
-│   └── constants.js       # Application constants
-└── utils/                 # Utility functions
-    └── helpers.js         # Test setup helpers
-
-
 ## Design Patterns
 ### Page Object Model
 
@@ -98,6 +83,20 @@ tests/
 - Completed Filter: Show only completed todos
 - URL Routing: Verify correct URL fragments for each filter
 
-###Error Handling
+### Error Handling
 - Automatic retries for flaky scenarios
 - Trace collection on failures for debugging
+
+### **Project Structure**
+tests/
+├── ui/                     # UI test files
+│   ├── pages/             # Page Object Model classes
+│   │   └── todo.page.js   # Main TodoMVC page object
+│   ├── components/        # Reusable component objects
+│   │   └── ToDoItem.js    # Individual todo item component
+│   └── todo.test.js       # Main test scenarios
+├── data/                  # Test data and constants
+│   ├── test-data.js       # Test data sets
+│   └── constants.js       # Application constants
+└── utils/                 # Utility functions
+    └── helpers.js         # Test setup helpers
