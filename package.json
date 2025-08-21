@@ -4,7 +4,9 @@
   "description": "Comprehensive test automation framework covering API and UI testing for simple REST endpoints and demo application",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:headed": "playwright test --headed"
   },
   "repository": {
     "type": "git",

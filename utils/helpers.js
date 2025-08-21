@@ -6,7 +6,7 @@
  * @param {string} localStorageKey - Key for localStorage (e.g., 'react-todos')
  * @returns {Promise<void>}
  */
-export async function setupPageWithData({ page, url = '/', localStorageData, localStorageKey = 'react-todos', reload = true }) {
+export async function setupPageWithData({ page, url = '/', localStorageData, localStorageKey = 'react-todos', reload = false }) {
     // Navigate to page
     await page.goto(url)
 
