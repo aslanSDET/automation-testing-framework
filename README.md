@@ -128,7 +128,7 @@ npx playwright test --grep="@flaky" --project=ui-tests
 - **Duplicate Addition**: Add existing todo to populated list
 - **Multiple Addition**: Add several todos in sequence
 - **Special Characters**: Test ASCII characters and edge cases
-- **Input Validation**: Empty input, whitespace, maximum length
+- **Input Validation**: Whitespace(Trimming Feature)
 
 #### **2. Complete Todo Tests (@mark-complete, @regression)**
 - **Single Toggle**: Mark individual todo as complete/incomplete
