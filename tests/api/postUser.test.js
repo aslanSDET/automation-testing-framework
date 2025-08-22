@@ -7,7 +7,9 @@ const API_BASE = process.env.API_BASE_URL
 const key = process.env.READWRITE_API_KEY
 
 // TODO: Current API does not write to DB. Once DB is established, confirm resource is created at DB.
-test.describe('POST /users - Create User Tests', () => {
+test.describe('POST /users - Create User Tests', {
+    tag: ['@postUser', '@api']
+}, () => {
     
     test('should create user with valid data', async ({ request }) => {
         const userData = {

@@ -7,9 +7,13 @@ const API_BASE = process.env.API_BASE_URL;
 
 // TODO: Ticket#001 data injection helper
 // TODO: Ticket#002 get call helper: Queries to be send as function option
-test.describe('Get User Tests', () => { 
+test.describe('Get User Tests', {
+    tag: ['@getUser', '@api']
+}, () => { 
 
-    test('should get all users successfully per API contract', async ({ request }) => {
+    test('should get all users successfully per API contract', {
+        tag: ['@smoke']
+    }, async ({ request }) => {
         const response = await request.get(`${API_BASE}/users`, {
             headers: getApiHeaders({})
         });
@@ -27,7 +31,9 @@ test.describe('Get User Tests', () => {
         ).toEqual([]);
     });
 
-    test('should get single user by valid ID', async ({ request }) => {
+    test('should get single user by valid ID', {
+        tag: ['@smoke']
+    }, async ({ request }) => {
         const response = await request.get(`${API_BASE}/users/${projectConstants.API.validUser.id}`,
             { headers: getApiHeaders({}) }
         );

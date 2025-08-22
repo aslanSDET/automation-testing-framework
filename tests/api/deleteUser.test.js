@@ -6,7 +6,9 @@ const API_BASE = process.env.API_BASE_URL
 const key = process.env.ALLACCESS_API_KEY
 
 // TODO: No DB has been built. Once DB is established, set up beforeEach and create resource for each test to delete
-test.describe('DELETE /users/{id} - Delete User Tests', () => {
+test.describe('DELETE /users/{id} - Delete User Tests', {
+    tag: ['@deleteUser', '@api']
+}, () => {
 
     test('should delete user with valid ID', async ({ request }) => {
         // Use existing valid user from constants

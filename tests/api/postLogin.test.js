@@ -9,7 +9,9 @@ const invalidUser = {
     password: 'notGood'
 }
 
-test.describe('POST /login - Login Tests', () => {
+test.describe('POST /login - Login Tests', {
+    tag: ['@login', '@api']
+}, () => {
 
     test('should login successfully with valid credentials', async ({ request }) => {
         const response = await request.post(`${API_BASE}/login`, {
