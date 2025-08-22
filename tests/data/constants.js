@@ -6,6 +6,9 @@ const projectConstants = {
         MINUTES: {
             1: 1 * 60 * 1000
         }
+    },
+    API: {
+        validUser: 8079764
     }
 }
 
