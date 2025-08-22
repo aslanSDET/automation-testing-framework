@@ -22,3 +22,10 @@ export async function setupPageWithData({ page, url = '/', localStorageData, loc
     }
 
 }
+
+export function getApiHeaders({key = process.env.READONLY_API_KEY}) {
+    return {
+        'x-api-key': key,
+        'Content-Type': 'application/json'
+    };
+}
