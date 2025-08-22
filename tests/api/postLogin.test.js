@@ -22,7 +22,6 @@ test.describe('POST /login - Login Tests', {
         expect(response.status()).toBe(200);
         const data = await response.json();
         expect(data).toHaveProperty('token');
-        console.log({data})
     });
 
     test('should fail login with invalid credentials', async ({ request }) => {
