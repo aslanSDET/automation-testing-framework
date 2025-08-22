@@ -33,7 +33,28 @@ function validateUsersArraySchema(json) {
     return v.validate(json, usersArraySchema).errors;
 }
 
+// Schema for POST /users response
+const createUserResponseSchema = {
+    id: '/createUserResponse',
+    type: 'object',
+    properties: {
+        name: { type: 'string' },
+        job: { type: 'string' },
+        id: { type: 'string' },  // ReqRes returns string ID for created users
+        createdAt: { type: 'string' }
+    },
+    required: ['name', 'job', 'id', 'createdAt'],
+    additionalProperties: false
+};
+
+function validateCreateUserResponseSchema(json) {
+    const v = new Validator();
+    v.addSchema(createUserResponseSchema, '/createUserResponse');
+    return v.validate(json, createUserResponseSchema).errors;
+}
+
 export {
     validateUserSchema,
-    validateUsersArraySchema
+    validateUsersArraySchema,
+    validateCreateUserResponseSchema
 };

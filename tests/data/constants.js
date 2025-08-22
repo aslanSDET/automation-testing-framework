@@ -15,6 +15,10 @@ const projectConstants = {
             first_name: 'Eve',
             last_name: 'Holt',
             avatar: 'https://reqres.in/img/faces/4-image.jpg'
+        },
+        loginUser:{
+            email: 'eve.holt@reqres.in',
+            password: 'cityslicka'
         }
     }
 }
