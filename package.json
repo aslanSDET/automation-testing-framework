@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:api": "playwright test tests/api",
     "test:smoke": "playwright test --grep @smoke",
     "test:headed": "playwright test --headed"
   },
@@ -27,5 +28,9 @@
   "devDependencies": {
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "jsonschema": "^1.5.0"
   }
 }
