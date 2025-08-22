@@ -70,6 +70,34 @@ test.describe('ToDo App Functionality',
             await expect(todoPage.newEntry).toHaveCount(testData.expectedLength);
         });
     });
+
+    test.describe(`Adds entry with whitespace: Trimming feature`,
+        {
+            tag: ['@add-todo', '@regression']
+        },
+        () => {
+        let todoPage;
+
+        const testData =
+            { input: ['   trimmed the space from beginning and end   '], data: [], description: 'Trim empty space', expectedResult: 'trimmed the space from beginning and end'}
+
+        test.beforeEach(async({ page }) => {
+            todoPage = new ToDoPage(page);
+            
+            // Navigate to app and inject test data: Clear storage
+            await setupPageWithData({ page, localStorageData: testData.data })
+        })
+    
+        test('Adds new entries', async ({}) => {
+            await todoPage.navigate();
+    
+            await todoPage.addTodo(testData.input);
+
+            await expect(todoPage.newEntry).toHaveText(
+                testData.expectedResult
+                );
+        });
+    });
     
     const deleteTestScenarios = [
         {
