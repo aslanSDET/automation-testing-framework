@@ -1,32 +1,24 @@
 import { Validator } from 'jsonschema';
 
 const userSchema = {
+    id: '/user',
     type: 'object',
-    required: ['id', 'name', 'email', 'gender', 'status'],
     properties: {
         id: { type: 'number' },
-        name: { type: 'string' },
         email: { type: 'string' },
-        gender: { type: 'string', enum: ['male', 'female', 'other'] },
-        status: { type: 'string', enum: ['active', 'inactive'] }
-    }
+        first_name: { type: 'string' },
+        last_name: { type: 'string' },
+        avatar: { type: 'string' }
+    },
+    required: ['id', 'email', 'first_name', 'last_name'],
+    additionalProperties: false
 };
 
 const usersArraySchema = {
     id: '/users',
     type: 'array',
-    items: {
-        $ref: '/user'
-    }
+    items: { $ref: '/user' }
 };
-
-const errorSchema = {
-    type: 'object',
-    required: ['message'],
-    properties: {
-        message: { type: 'string' }
-    }
-}
 
 function validateUserSchema(json) {
     const v = new Validator();
@@ -41,14 +33,7 @@ function validateUsersArraySchema(json) {
     return v.validate(json, usersArraySchema).errors;
 }
 
-function validateErrorSchema(json) {
-    const v = new Validator();
-    v.addSchema(errorSchema, '/error');
-    return v.validate(json, errorSchema).errors;
-}
-
 export {
     validateUserSchema,
-    validateUsersArraySchema,
-    validateErrorSchema
+    validateUsersArraySchema
 };

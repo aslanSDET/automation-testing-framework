@@ -8,7 +8,14 @@ const projectConstants = {
         }
     },
     API: {
-        validUser: 8079764
+        validUser:     
+        {
+            id: 4,
+            email: 'eve.holt@reqres.in',
+            first_name: 'Eve',
+            last_name: 'Holt',
+            avatar: 'https://reqres.in/img/faces/4-image.jpg'
+        }
     }
 }
 
